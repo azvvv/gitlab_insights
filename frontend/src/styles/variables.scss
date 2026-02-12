@@ -1,0 +1,109 @@
+// 主题颜色变量
+$primary-color: #3b82f6;
+$primary-dark: #2563eb;
+$primary-darker: #1e40af;
+$primary-light: #60a5fa;
+$primary-lighter: #dbeafe;
+$primary-lightest: #eff6ff;
+
+// 中性色
+$text-primary: #1e293b;
+$text-secondary: #475569;
+$text-tertiary: #64748b;
+$text-quaternary: #94a3b8;
+
+// 背景色
+$bg-primary: #ffffff;
+$bg-secondary: #f8fafc;
+$bg-tertiary: #f1f5f9;
+$bg-dark: #1e293b;
+$bg-darker: #0f172a;
+
+// 渐变
+$gradient-primary: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+$gradient-primary-light: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+$gradient-bg: linear-gradient(180deg, #f0f7ff 0%, #ffffff 100%);
+$gradient-bg-card: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+$gradient-bg-hover: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+$gradient-dark: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+
+// 阴影
+$shadow-sm: 0 1px 3px rgba(59, 130, 246, 0.08);
+$shadow-md: 0 4px 12px rgba(59, 130, 246, 0.12);
+$shadow-lg: 0 4px 24px rgba(59, 130, 246, 0.08);
+$shadow-xl: 0 8px 24px rgba(59, 130, 246, 0.2);
+$shadow-2xl: 0 20px 48px rgba(59, 130, 246, 0.15);
+
+// 边框
+$border-color: rgba(59, 130, 246, 0.1);
+$border-color-hover: rgba(59, 130, 246, 0.2);
+$border-color-active: rgba(59, 130, 246, 0.3);
+
+// 圆角
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 16px;
+$radius-xl: 20px;
+$radius-2xl: 24px;
+
+// 间距
+$spacing-xs: 8px;
+$spacing-sm: 12px;
+$spacing-md: 16px;
+$spacing-lg: 20px;
+$spacing-xl: 24px;
+$spacing-2xl: 32px;
+$spacing-3xl: 40px;
+
+// 字体大小
+$font-xs: 12px;
+$font-sm: 13px;
+$font-md: 14px;
+$font-lg: 15px;
+$font-xl: 16px;
+$font-2xl: 18px;
+$font-3xl: 20px;
+$font-4xl: 24px;
+
+// 过渡动画
+$transition-fast: all 0.2s ease;
+$transition-normal: all 0.3s ease;
+$transition-slow: all 0.4s ease;
+
+// Mixin - 卡片样式
+@mixin card-style {
+  background: $bg-primary;
+  border-radius: $radius-2xl;
+  box-shadow: $shadow-lg;
+  border: 1px solid $border-color;
+  transition: $transition-normal;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-2xl;
+    border-color: $border-color-hover;
+  }
+}
+
+// Mixin - 按钮主题样式
+@mixin button-primary {
+  background: $gradient-primary;
+  border: none;
+  color: white;
+  font-weight: 600;
+  box-shadow: $shadow-md;
+  transition: $transition-normal;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-xl;
+  }
+}
+
+// Mixin - 渐变文字
+@mixin gradient-text {
+  background: $gradient-primary;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

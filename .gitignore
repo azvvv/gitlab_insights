@@ -1,0 +1,13 @@
+*.log
+tmp/
+docs/
+node_modules/
+.venv
+.env
+arch*
+__pycache__/
+*.pyc
+logs/
+gitlab-insight-frontend/
+.shared
+.github

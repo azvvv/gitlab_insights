@@ -1,0 +1,59 @@
+// 通用样式
+body {
+  background-color: #f0f2f5;
+}
+
+// Element Plus 主题定制
+:root {
+  --el-color-primary: #3b82f6;
+  --el-color-primary-dark-2: #2563eb;
+  --el-color-primary-light-3: #60a5fa;
+  --el-color-primary-light-5: #dbeafe;
+  --el-color-primary-light-7: #eff6ff;
+  --el-color-primary-light-9: #f0f7ff;
+  --el-color-success: #67c23a;
+  --el-color-warning: #e6a23c;
+  --el-color-danger: #f56c6c;
+  --el-color-error: #f56c6c;
+  --el-color-info: #909399;
+}
+
+// 通用工具类
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+// 卡片样式
+.card-container {
+  background: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+// 表格操作列样式
+.table-actions {
+  .el-button {
+    margin-left: 10px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
