@@ -7,6 +7,4 @@ node_modules/
 arch*
 __pycache__/
 *.pyc
-logs/
-gitlab-insight-frontend/
 .shared
