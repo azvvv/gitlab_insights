@@ -147,7 +147,9 @@ def verify_token(token: str):
     except jwt.InvalidTokenError as e:
         return False, None, f'Token 无效: {str(e)}'
 
-def token_required(response_formatter=None):
+_sentinel = object()
+
+def token_required(_func=_sentinel, *, response_formatter=None):
     """
     通用 Token 认证装饰器
     
@@ -226,15 +228,13 @@ def token_required(response_formatter=None):
     
     # 支持不带括号的使用方式（向后兼容）
     # @token_required  而不是 @token_required()
-    if callable(response_formatter):
-        # response_formatter 实际上是被装饰的函数
-        func = response_formatter
-        response_formatter = None
-        return decorator(func)
+    if _func is not _sentinel:
+        # _func 是被装饰的函数（不带括号调用）
+        return decorator(_func)
     
     return decorator
 
-def admin_required(response_formatter=None):
+def admin_required(_func=_sentinel, *, response_formatter=None):
     """
     管理员权限装饰器
     
@@ -289,10 +289,8 @@ def admin_required(response_formatter=None):
         return decorated
     
     # 支持不带括号的使用方式（向后兼容）
-    if callable(response_formatter):
-        func = response_formatter
-        response_formatter = None
-        return decorator(func)
+    if _func is not _sentinel:
+        return decorator(_func)
     
     return decorator
 

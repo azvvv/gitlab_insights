@@ -3,7 +3,7 @@
 提供用户登录、Token 验证、密码管理、LDAP 认证等功能
 """
 from flask import Blueprint, request, g
-from services.auth_service import AuthService
+from shared.auth_service import AuthService
 from api.response import api_response
 from api.auth_decorators import token_required, admin_required
 from utils.errorhandler import handle_exceptions
@@ -170,7 +170,7 @@ def change_password():
 def test_ldap_connection():
     """测试 LDAP 连接（仅管理员）"""
     try:
-        from services.ldap_service import LDAPService
+        from shared.ldap_service import LDAPService
         from config.ldap_config import LDAPConfig
         
         if not LDAPConfig.LDAP_ENABLED:
@@ -211,7 +211,7 @@ def test_ldap_connection():
 def get_ldap_config():
     """获取 LDAP 配置信息（仅管理员，敏感信息已隐藏）"""
     try:
-        from services.ldap_service import LDAPService
+        from shared.ldap_service import LDAPService
         ldap_service = LDAPService()
         return api_response(
             success=True,

@@ -18,6 +18,9 @@ from .user_model import (
     SharedPermissionService
 )
 
+from .auth_service import AuthService
+from .ldap_service import LDAPService
+
 __all__ = [
     # 认证装饰器
     'token_required',
@@ -36,4 +39,6 @@ __all__ = [
     # 服务类
     'SharedUserService',
     'SharedPermissionService',
+    'AuthService',
+    'LDAPService',
 ]
